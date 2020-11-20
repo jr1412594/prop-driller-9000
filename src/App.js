@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import './App.css';
 
 import Header from './Components/Header';
+// import Transformer from './Components/Transformer' 
+import TransformersSection from './Containers/TransformersSection'
 
-export default class App extends React.Component {
+export default class App extends Component {
   state = {
     proptimusLogo: 'https://i.pinimg.com/originals/f8/7d/ec/f87dec9d6334af383a27f73e48ccf154.png',
     proptimusii: [
@@ -24,11 +26,13 @@ export default class App extends React.Component {
       }
     ]
   }
+  blank
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header proptimusLogo={this.state.proptimusLogo} />
+        <TransformersSection proptimusii={this.state.proptimusii} />
       </div>
     );
   }
