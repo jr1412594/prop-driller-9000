@@ -24,9 +24,19 @@ export default class App extends Component {
         name: 'omega',
         url: 'http://pngimg.com/uploads/transformers/transformers_PNG3.png'
       }
-    ]
+    ],
+    transformersDisplayed: false
   }
-  blank
+  
+  toggleDisplay = () => {
+    this.setState(previousState => 
+      (
+        {
+          transformersDisplayed: !previousState.transformersDisplayed
+        }
+      )
+    )
+  }
 
   render() {
     return (

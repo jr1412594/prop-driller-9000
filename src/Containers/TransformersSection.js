@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
+import Transformer from '../Components/Transformer'
 
 class TransformersSection extends Component {
-eachImage = () => {
+displayTransformers = () => {
   return this.props.proptimusii.map(proptimus => {
-    return (<img 
-    className = 'transformer'
-    src = {proptimus.url}
-    alt = {proptimus.name} 
+    return <Transformer 
+    key={proptimus.id} 
+    url={proptimus.url} 
+    name={proptimus.name}
     />
-    )
-  })
+    }
+  )
 }
-
 
   render() {
     return (
       <section className = "transformers-section">
-        {this.eachImage()}
+        {this.displayTransformers()}
       </section>
     );
   }
